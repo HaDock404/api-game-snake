@@ -74,7 +74,11 @@ async def recover_data(data: GameDataRequest):
             score=data.score,
             game_time=data.game_time,
             snake_head_x=data.snake_head_position['x'],
-            snake_head_y=data.snake_head_position['y']
+            snake_head_y=data.snake_head_position['y'],
+            current_food_position_x=data.current_food_position['x'],
+            current_food_position_y=data.current_food_position['y'],
+            previous_food_position_x=data.previous_food_position['x'],
+            previous_food_position_y=data.previous_food_position['y']
         )
         db.add(game_data)
         db.commit()
