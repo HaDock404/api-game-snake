@@ -26,6 +26,8 @@ class GameData(Base):
     current_food_position_y = Column(Integer)
     previous_food_position_x = Column(Integer)
     previous_food_position_y = Column(Integer)
+    board_width = Column(Integer)
+    board_height = Column(Integer) 
 
 
 # Créer la table dans la base de données
@@ -50,6 +52,8 @@ class GameDataRequest(BaseModel):
     snake_head_position: dict  # {"x": int, "y": int}
     current_food_position: dict  # {"x": int, "y": int}
     previous_food_position: dict  # {"x": int, "y": int}
+    board_width: int
+    board_height: int
 
 
 @app.get("/")
@@ -84,7 +88,9 @@ async def recover_data(data: GameDataRequest):
             current_food_position_x=data.current_food_position['x'],
             current_food_position_y=data.current_food_position['y'],
             previous_food_position_x=data.previous_food_position['x'],
-            previous_food_position_y=data.previous_food_position['y']
+            previous_food_position_y=data.previous_food_position['y'],
+            board_width=data.board_width,
+            board_height=data.board_height
         )
         db.add(game_data)
         db.commit()
