@@ -22,6 +22,10 @@ class GameData(Base):
     game_time = Column(Float)
     snake_head_x = Column(Integer)
     snake_head_y = Column(Integer)
+    current_food_position_x = Column(Integer)
+    current_food_position_y = Column(Integer)
+    previous_food_position_x = Column(Integer)
+    previous_food_position_y = Column(Integer)
 
 
 # Créer la table dans la base de données
@@ -44,6 +48,8 @@ class GameDataRequest(BaseModel):
     score: int
     game_time: float
     snake_head_position: dict  # {"x": int, "y": int}
+    current_food_position: dict  # {"x": int, "y": int}
+    previous_food_position: dict  # {"x": int, "y": int}
 
 
 @app.get("/")
