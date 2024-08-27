@@ -24,7 +24,15 @@ My API offers the possibility of integrating into game monitoring tools in order
 git clone https://github.com/HaDock404/api-game-snake.git
 cd api-game-snake
 pip install -r ./packages/requirements.txt
-```  
+``` 
+or you can create a container 
+
+```bash
+git clone https://github.com/HaDock404/api-game-snake.git
+cd api-game-snake
+docker build -t your_name/dockerimg:v0 .
+sudo docker run -dp 8081:8000 -ti --name Container hadock404/dockerimg:v1
+``` 
 
 ## Launch Application   
 
