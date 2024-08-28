@@ -31,7 +31,7 @@ or you can create a container
 git clone https://github.com/HaDock404/api-game-snake.git
 cd api-game-snake
 docker build -t your_name/dockerimg:v0 .
-sudo docker run -dp 8081:8000 -ti --name Container hadock404/dockerimg:v1
+sudo docker run -dp 8081:8000 -ti --name Container your_name/dockerimg:v0
 ``` 
 
 ## Launch Application   
